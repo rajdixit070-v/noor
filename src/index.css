@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  
+  body {
+    @apply bg-[#FFFDFB] text-ink font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #E5607D;
+    color: #ffffff;
+  }
+
+  /* Custom subtle rose scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF6F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E5607D55;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E5607D;
+  }
+}
+
+@layer components {
+  /* Buttons matching reference */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply btn bg-rose text-white shadow-sm hover:bg-rose-hover hover:shadow-md hover:shadow-rose/30;
+  }
+  
+  .btn-outline {
+    @apply btn border border-rose text-rose bg-white hover:bg-rose hover:text-white shadow-sm;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold text-white hover:bg-gold-dark shadow-sm hover:shadow-gold;
+  }
+
+  .btn-pill-sm {
+    @apply inline-flex items-center justify-center rounded-full border border-rose text-rose bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide transition duration-300 hover:bg-rose hover:text-white shadow-sm;
+  }
+
+  /* Cards matching reference */
+  .service-card {
+    @apply relative flex flex-col items-center rounded-2xl border border-[#F4E6EA] bg-white p-5 text-center transition-all duration-300 shadow-[0_4px_20px_rgba(229,96,125,0.05)] hover:-translate-y-2 hover:shadow-[0_12px_28px_rgba(229,96,125,0.15)] hover:border-rose/40;
+  }
+
+  .feature-badge {
+    @apply flex items-center gap-3 rounded-xl border border-blush-200 bg-white/90 p-3 shadow-sm transition-all duration-200 hover:border-rose/30 hover:bg-blush-50;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-[#E9DCD3] bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-light outline-none transition duration-200 focus:border-rose focus:ring-2 focus:ring-rose/20;
+  }
+}
+
+/* Elegant flourish divider lines */
+.flourish-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.flourish-divider::before,
+.flourish-divider::after {
+  content: '';
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(to right, transparent, #C5A059, transparent);
+}
