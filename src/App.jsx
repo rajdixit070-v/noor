@@ -28,12 +28,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFDFB] text-ink font-sans selection:bg-rose selection:text-white">
-      {/* Sticky Header with Logo and Navigation */}
+    <div className="min-h-screen bg-[#FFFDFB] text-ink font-sans selection:bg-rose selection:text-white overflow-x-hidden">
+      {/* Sticky Header with Logo and Responsive Hamburger Drawer */}
       <Navbar onBook={handleBook} />
 
       <main>
-        {/* 1. Hero Section matching reference */}
+        {/* 1. Hero Section */}
         <Hero onBook={handleBook} />
 
         {/* 2. Services Section: What We Offer */}
@@ -52,28 +52,29 @@ export default function App() {
         <Testimonials />
 
         {/* 7. CTA Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-r from-blush-100 via-blush-50 to-blush-100 py-16 sm:py-20 text-center border-y border-blush-200">
+        <section className="relative overflow-hidden bg-gradient-to-r from-blush-100 via-blush-50 to-blush-100 py-12 sm:py-16 md:py-20 text-center border-y border-blush-200">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <div className="inline-flex items-center gap-1.5 text-gold text-sm mb-2">
+            <div className="inline-flex items-center gap-1.5 text-gold text-xs sm:text-sm mb-2">
               <Sparkles className="w-4 h-4" />
-              <span className="font-script text-2xl text-gold">Your Special Look Awaits</span>
+              <span className="font-script text-xl sm:text-2xl text-gold">Your Special Look Awaits</span>
             </div>
             
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ink font-normal tracking-tight">
+            <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl text-ink font-normal tracking-tight">
               Ready To Reveal Your{' '}
-              <span className="font-script text-5xl sm:text-6xl text-rose font-normal inline-block ml-1">
+              <span className="font-script text-4xl xs:text-5xl sm:text-6xl text-rose font-normal inline-block ml-1">
                 Beauty?
               </span>
             </h2>
             
-            <p className="mt-3 text-sm sm:text-base text-ink-muted max-w-xl mx-auto leading-relaxed">
+            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base text-ink-muted max-w-xl mx-auto leading-relaxed px-2">
               Book your appointment today and let our seasoned beauty artisans craft your unforgettable look.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row items-center justify-center gap-3">
               <button
+                type="button"
                 onClick={() => handleBook()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-rose hover:bg-rose-hover text-white text-xs sm:text-sm font-semibold uppercase tracking-wider px-7 py-3.5 shadow-md hover:shadow-lg hover:shadow-rose/30 active:scale-95 transition-all"
+                className="w-full xs:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-rose hover:bg-rose-hover text-white text-xs sm:text-sm font-semibold uppercase tracking-wider px-7 py-3.5 shadow-md active:scale-95 transition-all"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Appointment</span>
@@ -83,9 +84,9 @@ export default function App() {
                 href={waLink('Hello Noor Beauty Parlour, I want to book an appointment for my upcoming occasion!')}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-rose text-rose bg-white hover:bg-rose hover:text-white text-xs sm:text-sm font-medium px-7 py-3.5 shadow-sm transition-all"
+                className="w-full xs:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-rose text-rose bg-white hover:bg-rose hover:text-white text-xs sm:text-sm font-medium px-7 py-3.5 shadow-xs transition-all"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 fill-current" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>

@@ -1,18 +1,23 @@
 import React from 'react';
 
 /**
- * Exact replica of the Noor Beauty Parlour gold crest logo with crown and blush roses
+ * Exact replica of the Noor Beauty Parlour gold crest logo with crown and blush roses,
+ * optimized for seamless scaling across extra-small to desktop displays.
  */
 export default function Logo({ size = 'default', showTagline = true, className = '' }) {
   const isSmall = size === 'sm';
 
   return (
-    <div className={`flex items-center gap-3 select-none ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-3 select-none ${className}`}>
       {/* Golden Crest with Crown, Letter 'N', and Roses */}
       <div className="relative shrink-0">
         <svg
           viewBox="0 0 100 100"
-          className={`${isSmall ? 'w-10 h-10' : 'w-14 h-14 md:w-16 md:h-16'} drop-shadow-sm`}
+          className={`${
+            isSmall
+              ? 'w-9 h-9'
+              : 'w-11 h-11 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16'
+          } drop-shadow-sm`}
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -96,17 +101,17 @@ export default function Logo({ size = 'default', showTagline = true, className =
       </div>
 
       {/* Brand Typography */}
-      <div className="flex flex-col">
-        <div className="flex items-baseline gap-1.5">
-          <span className="font-script text-3xl sm:text-4xl text-ink leading-none tracking-normal font-normal">
+      <div className="flex flex-col min-w-0">
+        <div className="flex items-baseline gap-1">
+          <span className="font-script text-2xl xs:text-3xl sm:text-4xl text-ink leading-none font-normal">
             Noor
           </span>
-          <span className="font-serif text-[11px] sm:text-xs tracking-[0.24em] font-semibold text-ink uppercase ml-1">
+          <span className="font-serif text-[10px] xs:text-[11px] sm:text-xs tracking-[0.2em] sm:tracking-[0.24em] font-semibold text-ink uppercase ml-1 whitespace-nowrap">
             Beauty Parlour
           </span>
         </div>
         {showTagline && (
-          <span className="text-[9.5px] sm:text-[10.5px] tracking-wide text-ink-muted italic font-serif mt-0.5 whitespace-nowrap">
+          <span className="hidden sm:inline-block text-[9.5px] sm:text-[10.5px] tracking-wide text-ink-muted italic font-serif mt-0.5 whitespace-nowrap">
             Enhance Your Beauty, Reveal Your Confidence
           </span>
         )}

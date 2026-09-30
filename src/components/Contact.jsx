@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Instagram, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { SITE, waLink } from '../config';
 import BookingForm from './BookingForm';
 
@@ -32,54 +32,54 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative bg-gradient-to-b from-[#FFFDFB] via-[#FFF8F5] to-[#FFFDFB] py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="contact" className="relative bg-gradient-to-b from-[#FFFDFB] via-[#FFF8F5] to-[#FFFDFB] py-12 sm:py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-3 xs:px-4 sm:px-6">
         {/* Header */}
         <div className="text-center">
-          <div className="flex items-center justify-center gap-2">
-            <span className="text-gold text-lg select-none">⊰</span>
-            <span className="font-script text-3xl sm:text-4xl text-gold font-normal tracking-wide">
+          <div className="flex items-center justify-center gap-1.5 text-gold">
+            <span className="text-base select-none">⊰</span>
+            <span className="font-script text-2xl xs:text-3xl sm:text-4xl text-gold font-normal tracking-wide">
               Get In Touch
             </span>
-            <span className="text-gold text-lg select-none">⊱</span>
+            <span className="text-base select-none">⊱</span>
           </div>
-          <h2 className="mt-1 font-serif text-3xl sm:text-4xl lg:text-5xl text-ink font-normal tracking-tight">
+          <h2 className="mt-1 font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl text-ink font-normal tracking-tight">
             Visit Our Salon
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-ink-muted max-w-md mx-auto">
+          <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-ink-muted max-w-md mx-auto px-2">
             Book your session online or drop by our salon for a friendly beauty consultation.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-12 items-start">
+        <div className="mt-8 sm:mt-12 grid gap-8 lg:grid-cols-12 items-start">
           {/* Left Info Column */}
           <div className="space-y-6 lg:col-span-5">
-            <div className="rounded-3xl border border-blush-200 bg-white p-6 sm:p-8 shadow-sm">
-              <h3 className="font-serif text-xl font-medium text-ink mb-6">
+            <div className="rounded-2xl sm:rounded-3xl border border-blush-200 bg-white p-5 sm:p-8 shadow-xs">
+              <h3 className="font-serif text-lg sm:text-xl font-medium text-ink mb-5">
                 Contact & Location
               </h3>
 
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {contactInfo.map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={idx} className="flex items-start gap-3.5">
-                      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-blush-100 text-rose">
-                        <Icon className="w-5 h-5" />
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="grid h-9 w-9 sm:h-10 sm:w-10 shrink-0 place-items-center rounded-xl bg-blush-100 text-rose">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                       <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-ink-muted">
+                        <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-ink-muted">
                           {item.label}
                         </p>
                         {item.link ? (
                           <a
                             href={item.link}
-                            className="text-xs sm:text-sm font-medium text-ink hover:text-rose transition-colors"
+                            className="text-xs sm:text-sm font-medium text-ink hover:text-rose transition-colors break-words"
                           >
                             {item.val}
                           </a>
                         ) : (
-                          <p className="text-xs sm:text-sm font-medium text-ink">
+                          <p className="text-xs sm:text-sm font-medium text-ink break-words">
                             {item.val}
                           </p>
                         )}
@@ -90,37 +90,37 @@ export default function Contact() {
               </div>
 
               {/* Quick WhatsApp CTA */}
-              <div className="mt-8 border-t border-blush-100 pt-6">
+              <div className="mt-6 pt-5 border-t border-blush-100">
                 <a
                   href={waLink()}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-full bg-rose text-white text-xs font-semibold py-3 px-5 shadow-md hover:bg-rose-hover transition-colors"
+                  className="flex items-center justify-center gap-2 rounded-full bg-rose text-white text-xs font-semibold py-3 px-5 shadow-sm hover:bg-rose-hover active:scale-95 transition-all"
                 >
-                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <MessageCircle className="w-4 h-4 fill-current shrink-0" />
                   <span>Instant Chat on WhatsApp</span>
                 </a>
               </div>
             </div>
 
             {/* Google Maps Embed */}
-            <div className="overflow-hidden rounded-3xl border border-gold/40 shadow-sm">
+            <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/40 shadow-xs">
               <iframe
                 title="Noor Beauty Parlour Location Map"
                 loading="lazy"
-                className="h-56 w-full"
+                className="h-48 sm:h-56 w-full"
                 src="https://www.google.com/maps?q=Civil+Lines+Kanpur+Uttar+Pradesh&output=embed"
               />
             </div>
           </div>
 
           {/* Right Form Column */}
-          <div className="rounded-3xl border border-blush-200 bg-white p-6 sm:p-8 shadow-sm lg:col-span-7">
-            <div className="mb-6">
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-rose">
+          <div className="rounded-2xl sm:rounded-3xl border border-blush-200 bg-white p-5 sm:p-8 shadow-xs lg:col-span-7">
+            <div className="mb-5 sm:mb-6">
+              <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-rose">
                 Online Reservation
               </span>
-              <h3 className="font-serif text-2xl font-medium text-ink mt-1">
+              <h3 className="font-serif text-xl sm:text-2xl font-medium text-ink mt-0.5">
                 Send Appointment Inquiry
               </h3>
               <p className="text-xs text-ink-muted mt-1">
